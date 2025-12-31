@@ -1,0 +1,32 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(250, 227, 189); */
+    height:50vh;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border: 2px solid rgb(236, 236, 236);
+    border-radius: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+}
+
+input, select{
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+button{
+    padding: 8px;
+    border-radius: 6px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-weight: 600;
+}

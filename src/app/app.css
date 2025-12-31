@@ -1,0 +1,11 @@
+:host{
+    color:rgb(17, 18, 83);
+}
+
+.editableBox{
+    border: 2px solid violet;
+}
+
+.Correct{
+    background-color: green;
+}
