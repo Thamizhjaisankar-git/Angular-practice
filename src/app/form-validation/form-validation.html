@@ -1,16 +1,58 @@
-<div class="form">
+<div class="container">
+    <h1>Template driven form</h1>
+    <div class="form">
     <h3>Form Validation</h3>
     <div class="card">
-        <form>
-            <input #name value="" minlength="4" placeholder="Enter ur name">
-            <input #email value="" placeholder="Enter ur email">
-            <select #city value="">
+        <form #f="ngForm" ngSubmit="submit(f)">
+            <input type="text" name="name" minlength="4" placeholder="Enter ur name" ngModel required>
+            <input type="email" name="email" placeholder="Enter ur email" ngModel required>
+            <select name="city" placeholder="select city" ngModel required>
+                 <option value="">Select city</option>
                 <option>Chennai</option>
                 <option>Bangalore</option>
                 <option>Kerala</option>
             </select>
-            <button>Submit</button>
+            <button type="submit" [disabled]="f.invalid" (click)="submit(f)">Sign up</button>
         </form>
+        <!-- <p>Already have an account? <a href="http://localhost:4200/login">Login</a></p> -->
     </div>
 </div>
 
+    @if(f.submitted){
+        <h3>Name: {{f.value.name}}</h3>
+        <p>Email: {{f.value.email}}</p>
+        <p>City: {{f.value.city}}</p>
+    }
+</div>
+
+
+<div class="container">
+    <h1>Reactive form</h1>
+    <div class="form">
+    <h3>Form Validation</h3>
+    <div class="card">
+        <form [formGroup]="userForm" (ngSubmit)="submitFormData()">
+            <input type="text" value="" formControlName="name" minlength="4" placeholder="Enter ur name" required>
+            <input type="email" formControlName="email" placeholder="Enter ur email" required>
+            <select formControlName="city" required>
+                <option value="">Select city</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Chennai">Kerala</option>
+            </select>
+            <button type="submit" [disabled]="userForm.invalid">Sign up</button>
+        </form>
+        <!-- <p>Already have an account? <a routerLink="/login">Login</a></p> -->
+        <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+         <!-- <p>Already have an account? <a [routerLink]="['/login',name]">Login</a></p> -->
+    </div>
+</div>
+
+    @if(submitted){
+        <h3>Name: {{userForm.value.name}}</h3>
+        <p>Email: {{userForm.value.email}}</p>
+        <p>City: {{userForm.value.city}}</p>
+    }
+</div>
+
+<!-- <app-login [fullname]="name"></app-login> -->
