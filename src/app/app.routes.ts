@@ -3,6 +3,7 @@ import counter from "./counter/counter"
 import { FormValidation } from './form-validation/form-validation';
 import { Login}  from "./login/login";
 import { Practice } from "./practice/practice"
+import  serviceData  from "./data-store/data-store"
 
 export const routes: Routes = [
     {
@@ -24,6 +25,10 @@ export const routes: Routes = [
     {
         path:'practice',
         component: Practice
+    },
+    {
+        path:'service',
+        component: serviceData
     },
 ];
 
