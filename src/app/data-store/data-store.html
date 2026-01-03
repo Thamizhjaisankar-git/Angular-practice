@@ -1,7 +1,14 @@
-<p>data-store works!</p>
-<h3>{{dataStore.getData()}}</h3>
-<button (click)="dataStore.addData('Hello..')">Add data</button>
+<!-- <p>data-store works!</p>
+<h3>{{dataStore.getData()}}</h3> -->
+<!-- <button (click)="dataStore.addData('Hello..')">Add data</button> -->
 <!-- <p>{{result | json}}</p> -->
-<h3>{{result.title}}</h3>
+<!-- <h3>{{result.title}}</h3>
 <p>{{result.description}}</p>
-<h3>{{result.price}}</h3>
+<h3>{{result.price}}</h3> -->
+
+<form [formGroup]="product" (ngSubmit)="submit()">
+    <input formControlName="title" placeholder="Enter product title" required />
+    <input formControlName="description" placeholder="Enter product description" required />
+    <input formControlName="price" placeholder="Enter product price" required />
+    <button type="submit" [disabled]="product.invalid">submit</button>
+</form>

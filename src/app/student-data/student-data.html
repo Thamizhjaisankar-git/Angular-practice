@@ -1,0 +1,25 @@
+<h1>Student Data</h1>
+<div class="container">
+    <div class="border">
+        <div class="head">
+            <p>School Id</p>
+            <p>School Name</p>
+            <p>Departments</p>
+        </div>
+        <div class="body">
+            @for(country of data.countries; track country.countryId){
+                @for(state of country.states; track state.stateId){
+                    @for(school of state.schools; track schools.schoolId){
+                        <div class="row">
+                            <p >{{school.schoolId}}</p>
+                            <p>{{school.schoolName}}</p>
+                            <div class="btns">
+                                <button (click)="viewDepartment(school.departments)">View Departments</button>
+                            </div>   
+                        </div>
+                        } 
+                    }
+                }
+        </div>
+    </div>
+</div>
