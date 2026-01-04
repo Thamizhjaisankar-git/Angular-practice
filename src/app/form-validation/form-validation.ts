@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, FormArray, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
-import { Login } from "../login/login"
 
 @Component({
   selector: 'app-form-validation',
-  imports: [ FormsModule, ReactiveFormsModule, RouterLink, Login],
+  imports: [ FormsModule, ReactiveFormsModule, RouterLink ],
   templateUrl: './form-validation.html',
   styleUrl: './form-validation.css',
 })

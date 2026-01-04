@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OnInit, OnChanges, signal, Input, DestroyRef, inject, afterNextRender, afterEveryRender, DoCheck, AfterViewChecked, AfterViewInit, AfterContentChecked, AfterContentInit, } from '@angular/core';
+import { OnInit, signal, Input, DestroyRef, inject, afterNextRender, afterEveryRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgFor, NgIf, NgClass, DatePipe, CurrencyPipe, UpperCasePipe, LowerCasePipe, JsonPipe, TitleCasePipe} from "@angular/common"
 import user from "../Type"
@@ -116,6 +116,15 @@ export class Practice implements OnInit{
   
     }
 
+    ngAfterContentInit() {
+      console.log("content initialized");
+    }
 
-    
+    ngAfterViewChecked(){
+      console.log("After view checked");
+    }
+
+    ngAfterViewInit(){
+      console.log("After view Init")
+    }
 }

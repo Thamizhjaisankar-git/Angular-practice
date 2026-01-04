@@ -4,9 +4,10 @@ import { Router  } from '@angular/router';
 
 @Component({
   selector: 'app-student-data',
-  imports: [],
+  standalone: true,
+  imports:[],
   templateUrl: './student-data.html',
-  styleUrl: './student-data.css',
+  styleUrls: ['./student-data.css'],
 })
 export default class StudentData {
  dataStore = inject(serviceData);

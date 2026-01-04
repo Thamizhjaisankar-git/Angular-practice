@@ -29,10 +29,6 @@ export const routes: Routes = [
         path:'practice',
         component: Practice
     },
-    {
-        path:'service',
-        component: serviceData
-    },
      {
         path:'',
         component: School

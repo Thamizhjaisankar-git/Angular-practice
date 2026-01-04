@@ -1,11 +1,10 @@
 import { Component, inject,  } from '@angular/core';
 import serviceData from '../service'
-import { JsonPipe } from '@angular/common';
 import { FormsModule, FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-data-store',
-  imports: [JsonPipe, FormsModule,ReactiveFormsModule],
+  imports: [FormsModule,ReactiveFormsModule],
   templateUrl: './data-store.html',
   styleUrl: './data-store.css',
 })
@@ -39,8 +38,6 @@ export default class DataStore {
           }
         }
   }
- 
-  
 
 
   // constructor(){

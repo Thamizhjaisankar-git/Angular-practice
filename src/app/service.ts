@@ -1,6 +1,5 @@
 import { Injectable, inject  } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { studentData } from "./studentsData"
 import { of, Observable } from 'rxjs';
 import schoolsData  from "../assets/schoolsData.json"
 
@@ -28,10 +27,9 @@ export default class Service {
     return this.http.post('https://fakestoreapi.com/products/1',payload);
   }
 
-  private url = "../assets/schoolsData.json" ;
   getStudent():Observable<any>{
     return of(schoolsData);
-    // return this.http.get<any>("../assets/schoolsData.json");
+    // return this.http.get<any>('assets/schoolsData.json');
   }
 
 }
