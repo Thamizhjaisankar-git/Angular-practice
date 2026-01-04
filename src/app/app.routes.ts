@@ -10,7 +10,7 @@ import Student from "./student-list/student-list"
 
 export const routes: Routes = [
     {
-        path:'',
+        path:'counter',
         component: counter
     },
     {
@@ -34,7 +34,7 @@ export const routes: Routes = [
         component: serviceData
     },
      {
-        path:'school',
+        path:'',
         component: School
     },
     {

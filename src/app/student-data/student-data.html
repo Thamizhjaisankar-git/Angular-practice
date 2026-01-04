@@ -1,25 +1,23 @@
-<h1>Student Data</h1>
-<div class="container">
-    <div class="border">
-        <div class="head">
-            <p>School Id</p>
-            <p>School Name</p>
-            <p>Departments</p>
-        </div>
-        <div class="body">
-            @for(country of data.countries; track country.countryId){
-                @for(state of country.states; track state.stateId){
-                    @for(school of state.schools; track schools.schoolId){
-                        <div class="row">
-                            <p >{{school.schoolId}}</p>
-                            <p>{{school.schoolName}}</p>
-                            <div class="btns">
-                                <button (click)="viewDepartment(school.departments)">View Departments</button>
-                            </div>   
-                        </div>
-                        } 
-                    }
+<div class="view">
+    <h1>School List</h1>
+    <div class="container">
+        <table class="border">
+            <thead>
+                <tr class="head">
+                    <td>School Id</td>
+                    <td>School Name</td>
+                    <td>Departments</td>
+                </tr>
+            </thead>
+            <tbody class="body">
+                @for(school of schools; track $index){
+                    <tr class="row">
+                        <td>{{school.schoolId}}</td>
+                        <td>{{school.schoolName}}</td>
+                        <td><button (click)="viewDepartment(school.departments)">View Departments</button></td>
+                    </tr>
                 }
-        </div>
+            </tbody>
+        </table>
     </div>
 </div>

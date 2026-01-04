@@ -1,21 +1,23 @@
-<h1>Departments</h1>
-<div class="container">
-    <div class="border">
-        <div class="head">
-            <p>Department Id</p>
-            <p>Department Name</p>
-            <p>Students</p>
-        </div>
-        <div class="body">
-            @for(dept of selecteddept; track dept){
-                <div class="row" key="index">
-                    <p >{{dept.departmentId}}</p>
-                    <p>{{dept.departmentName}}</p>
-                    <div class="btns">
-                        <button (click)="viewStudents()">View Students</button>
-                    </div>   
-                </div>
-            }  
-        </div>
+<div class="view">
+    <h1>Departments</h1>
+    <div class="container">
+        <table class="border">
+            <thead>
+                <tr class="head">
+                    <td>Department Id</td>
+                    <td>Department Name</td>
+                    <td>Students</td>
+                </tr>
+            </thead>
+            <tbody class="body">
+                @for(dept of selecteddept; track dept){
+                    <tr class="row" key="index">
+                        <td >{{dept.departmentId}}</td>
+                        <td>{{dept.departmentName}}</td>
+                        <td><button (click)="viewStudents()">View Students</button> </td>   
+                    </tr>
+                }  
+            </tbody>
+        </table>
     </div>
 </div>

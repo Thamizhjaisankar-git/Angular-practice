@@ -7,13 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrl: './student-list.css',
 })
 export default class StudentList {
-
-  data = history.state;
-  
-
-  //  @Input() data:any=[];
+  departmentData = history.state;
+  department = this.departmentData.department;
+  students:any[] = [];
+ 
   ngOnInit(){
-    console.log(this.data)
+    for(const dept of this.department){
+        this.students.push(...dept.students);
+      }
+    console.log(this.department); 
   }
   
 }

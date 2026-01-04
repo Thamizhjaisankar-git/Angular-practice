@@ -1,35 +1,27 @@
-<h1>Student List</h1>
-<div class="container">
-    <div class="border">
-        <div class="head">
-            <p>Student Id</p>
-            <p>Student Name</p>
-            <p>Age</p>
-            <p>Grade</p>
-            <p>Email</p>
-        </div>
-        <div class="body">
-                        <!-- @for(student of data.students; track student.studentId){ -->
-                        <div class="row">
-                            <p >ST-01</p>
-                            <p>Arun</p>
-                            <p>16</p>
-                            <p>10-A</p>
-                            <p>arun@gmail.com</p>
-                            <!-- <p >{{student.studentId}}</p>
-                            <p>{{student.name}}</p>
-                            <p>{{student.age}}</p>
-                            <p>{{student.grade}}</p>
-                            <p>{{student.email}}</p> -->
-                        </div>
-                        <div class="row">
-                            <p >ST-02</p>
-                            <p>Karthik</p>
-                            <p>15</p>
-                            <p>9-B</p>
-                            <p>karthik@gmail.com</p>
-                           
-                        </div>
-        </div>
+<div class="view">
+    <h1>Student List</h1>
+    <div class="container">
+        <table class="border">
+            <thead>
+                <tr class="head">
+                    <td>Student Id</td>
+                    <td>Student Name</td>
+                    <td>Age</td>
+                    <td>Grade</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
+            <tbody class="body">
+                @for(student of students; track student.studentId){  
+                    <tr class="row"> 
+                        <td>{{student.studentId}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.grade}}</td>
+                        <td>{{student.email}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

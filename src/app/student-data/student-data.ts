@@ -19,14 +19,21 @@ export default class StudentData {
     this.dataStore.getStudent().subscribe((res):any=>{
       this.data = res;
       console.log(this.data)
-        // this.schools = res.countries[0].states[0].schools;
-        // console.log(this.schools);
+
+      this.data.countries.forEach((country:any) => {
+        country.states.forEach((state:any) => {
+          state.schools.forEach((school:any) => {
+            this.schools.push(school);
+            // console.log(this.schools)
+          })
+        })
+      })
     })
   }
 
   private router:any = inject(Router);
   viewDepartment(dept:any){
-     console.log(dept);
+    console.log(dept);
     this.router.navigate(['/departments'],{
       state: {
         selecteddept: dept,
