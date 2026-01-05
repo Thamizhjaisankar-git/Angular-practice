@@ -33,9 +33,9 @@ export default class StudentData {
   }
 
   private router:any = inject(Router);
-  viewDepartment(dept:any){
+  viewDepartment(schoolName:any,dept:any){
     console.log(dept);
-    this.router.navigate(['/departments'],{
+    this.router.navigate(['/school',schoolName,'departments'],{
       state: {
         selecteddept: dept,
       }

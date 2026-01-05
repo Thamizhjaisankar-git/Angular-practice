@@ -37,9 +37,17 @@ export const routes: Routes = [
         path:'departments',
         component: Department
     },
+    {
+        path: 'school/:schoolName/departments',
+        component: Department
+    },
      {
-        path:'student',
+        path:'students',
         component: Student
     },
+    {
+        path: 'school/:schoolName/:departmentName/students',
+        component: Student
+    }
 ];
 
