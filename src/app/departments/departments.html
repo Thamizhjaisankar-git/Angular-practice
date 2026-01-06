@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody class="body">
-                @for(dept of selecteddept; track dept){
+                @for(dept of selecteddept; track dept.departmentId){
                     <tr class="row" key="index">
                         <td >{{dept.departmentId}}</td>
                         <td>{{dept.departmentName}}</td>

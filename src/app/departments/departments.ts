@@ -1,23 +1,19 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
 import { Router,  ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-departments',
+  standalone: true,
   imports: [],
   templateUrl: './departments.html',
   styleUrl: './departments.css',
 })
 export default class Departments {
-  data = history.state;
-  selecteddept = this.data.selecteddept;
-
   route = inject(ActivatedRoute);
-  schoolName!:any;
-  ngOnInit() {
-    this.schoolName = this.route.snapshot.paramMap.get('schoolName');
-    console.log(this.schoolName);
-  }
 
+  @Input() schoolName!:any;
+  @Input() selecteddept:any[] = [];
+  
   private router = inject(Router);
   viewStudents(dept:any){
     console.log(this.selecteddept);
@@ -26,6 +22,8 @@ export default class Departments {
         department: this.selecteddept,
       }
     });
+    return dept;
   }
 
+  
 }

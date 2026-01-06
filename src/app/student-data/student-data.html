@@ -1,4 +1,5 @@
 <div class="view">
+    @if(showschoolList){
     <h1>School List</h1>
     <div class="container">
         <table class="border">
@@ -20,4 +21,10 @@
             </tbody>
         </table>
     </div>
-</div>
+}
+  @if(showDepartments){
+    <app-departments [selecteddept]="department" [schoolName]="schoolName"></app-departments>
+  }
+   
+  </div>
+    
